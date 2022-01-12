@@ -136,7 +136,7 @@ namespace TradeManager
 			}
 			catch (Exception e)
 			{
-				config = new Configuration(new Devise("€", "EUR", "euro"), 10000, 1, 3, new ObservableCollection<Actif>() { Actifs_("EURUSD") }, "Sombre", new List<string>() { "mtKDSf_o48z4IzurNmPt", "yNwj1pSqNXXAmhA_tDvA", "srStScv0biCOfcfiPgIo", "DPfErEetkddCcGPsia9g", "xHNMuV3fTASMYD4Jop6M" }); ;
+				config = new Configuration(new Devise("€", "EUR", "euro"), 10000, 1, 3, new ObservableCollection<Actif>() { Actifs_("EURUSD") }, "Sombre", new List<string>() { "key1", "key2", "key3" }); ;
 			}
 
 			string output = JsonConvert.SerializeObject(config);
@@ -165,9 +165,9 @@ namespace TradeManager
 				smtpClient.EnableSsl = true;
 				smtpClient.UseDefaultCredentials = false;
 				smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-				smtpClient.Credentials = new NetworkCredential("dorian110620@gmail.com", "qammtugyixdfoilw");
-				MailAddress from = new MailAddress("dorian110620@gmail.com");
-				MailAddress to = new MailAddress("dorian110620@gmail.com");
+				smtpClient.Credentials = new NetworkCredential("test@gmail.com", "password");
+				MailAddress from = new MailAddress("test@gmail.com");
+				MailAddress to = new MailAddress("test@gmail.com");
 				MailMessage myMail = new System.Net.Mail.MailMessage(from, to);
 				myMail.Subject = "SERVER DOWN ?";
 				myMail.Body = "SERVER DOWN";
@@ -208,7 +208,7 @@ namespace TradeManager
 		{
 			configuration = LoadConfiguration();
 			this.DataContext = configuration;
-			API_KEY = "5v8y/B?E(G+KbPeShVmYq3t6w9z$C&F)";
+			API_KEY = "server_key";
 			client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", API_KEY);
 
 			DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
